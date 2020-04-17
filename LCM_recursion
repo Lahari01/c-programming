@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int lcm (int a,int b)
+{
+    static int i=1;
+    if(i%a==0 && i%b==0)
+    return i;
+    else
+    {
+        i++;
+        lcm(a,b);
+        return i;
+    }
+}
+
+int main()
+{
+    int a,b;
+    printf("enter the two nos.");
+    scanf("%d%d",&a,&b);
+    lcm(a,b);
+    printf("%d is the lcm of a & b",lcm(a,b));
+}
